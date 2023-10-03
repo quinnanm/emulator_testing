@@ -15,6 +15,13 @@ running the testfile:
 
 ```
 cmsDriver.py l1Ntuple -s RAW2DIGI --python_filename=data_def.py -n -1 --no_output --era=Run3 --data --conditions=130X_dataRun3_Prompt_v4 --customise=L1Trigger/Configuration/customiseSettings.L1TSettingsToCaloParams_2023_v0_3 --customise=L1Trigger/Configuration/customiseUtils.L1TGlobalMenuXML --customise=L1Trigger/Configuration/customiseReEmul.L1TReEmulFromRAW --customise=L1Trigger/L1TNtuples/customiseL1Ntuple.L1NtupleRAWEMU --filein=/store/data/Run2023C/JetMET0/RAW/v1/000/368/566/00000/81c206fd-f1d4-4f09-905b-4a185cf097c2.root --fileout=L1Ntuple.root >L1Ntuple_info.txt
+
+#updated version:
+
+cmsDriver.py l1Ntuple -s L1REPACK:uGT,RAW2DIGI --python_filename=data_def.py -n -1 --no_output --era=Run3 --data --conditions=130X_dataRun3_Prompt_v4 --customise=L1Trigger/Configuration/customiseSettings.L1TSettingsToCaloParams_2023_v0_3 --customise=L1Trigger/Configuration/customiseUtils.L1TGlobalMenuXML --customise=L1Trigger/Configuration/customiseReEmul.L1TReEmulFromRAW --customise=L1Trigger/L1TNtuples/customiseL1Ntuple.L1NtupleRAWEMU --filein=/store/data/Run2023C/JetMET0/RAW/v1/000/368/566/00000/81c206fd-f1d4-4f09-905b-4a185cf097c2.root --fileout=L1Ntuple.root >L1Ntuple_info.txt
+
+#location of files:
+/afs/cern.ch/user/m/mequinna/public/axol1tl_cmssw_emulator/unpackedinputs/
 ```
 
 setting up jupyter notebook environment:
@@ -31,8 +38,13 @@ pip install numpy pandas scikit-learn scipy matplotlib tqdm PyYAML
 
 # install uproot for reading/writing ROOT files
 pip install uproot awkward
+pip install coffea
+pip install pyarrow
+pip install zstandard
+pip install  lz4 xxhash
 
 jupyter notebook
 
-
 ```
+
+for standalone emulator comparison: https://codimd.web.cern.ch/N76UiLezTA-9P7bRYlLkMA?view
